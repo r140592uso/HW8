@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/resetcss.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="section1">
+      <div class="slider-wrapper">
+        <button class="arrow arrow-left" id="arrowleft"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="arrow arrow-right" id="arrowright"><i class="fa-solid fa-angle-right"></i></button>
+
+        <div class="slider-content" id="slider-content">
+          <div class="dots-paret"></div>
+        </div>
+        
+      </div>
+    </section>
+    <section class="section2">
+      <div class="post-wrapper" id="post-wrapperBlock">
+        <div class="overlay" id="overlay">
+          <div class="content" id="postcontent"></div>
+          <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <div class="add-post" id="add"><i class="fa-solid fa-plus"></i></div>
+        <div class="ovelay-add" id="postOverlay">
+          <form action="" id="form">
+            <label for="title">Post Title</label>
+            <input type="text" id="title" name="post title">
+            <button type="submit">პოსტის დამატება</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
