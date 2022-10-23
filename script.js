@@ -88,6 +88,7 @@ ajax("https://jsonplaceholder.typicode.com/posts", function (dataResponse) {
   });
 });
 
+// slider
 let data = [
   {
     id: 1,
@@ -122,25 +123,44 @@ function createDivTag(item) {
   return divtag;
 }
 function createImgTag(item) {
-  const tagImage = document.createElement("img");
-  tagImage.classList.add("image-slider");
-  tagImage.setAttribute("src", item.imageUrl);
-  tagImage.setAttribute("alt", item.title);
-  return tagImage;
+  // const tagImage = document.createElement("img");
+  // tagImage.classList.add("image-slider");
+  // tagImage.setAttribute("src", item.imageUrl);
+  // tagImage.setAttribute("alt", item.title);
+  // return tagImage;
+
+  const bgImage = document.createElement("div");
+  bgImage.style.backgroundImage = `url(${item.imageUrl})`
+  bgImage.classList.add("bgImagest");
+  return bgImage;
 }
 function createH3Tag(item) {
   const h3Title = document.createElement("h3");
   h3Title.innerText = item.title;
   return h3Title;
 }
+
+function createDots() {
+  const dots = document.createElement("div");
+  dots.classList.add("dots-parent");
+  data.forEach((element) => {
+    const childDots = document.createElement("div");
+    childDots.classList.add("child");
+    dots.appendChild(childDots);
+  });
+  return dots;
+}
 function setSlide() {
   sliderContent.innerHTML = " ";
   const slideItem = createDivTag(data[sliderIndex]);
   const imgTag = createImgTag(data[sliderIndex]);
   const titleSlider = createH3Tag(data[sliderIndex]);
+  const dots = createDots();
+
   slideItem.appendChild(imgTag);
   slideItem.appendChild(titleSlider);
   sliderContent.appendChild(slideItem);
+  sliderContent.appendChild(dots);
 }
 
 function arrowLeftClick() {
@@ -155,7 +175,6 @@ function arrowLeftClick() {
 
 function arrowRightClick() {
   if (sliderIndex == data.length - 1) {
-
     sliderIndex = 0;
     setSlide();
     return;
@@ -170,6 +189,3 @@ setInterval(() => {
   arrowRightClick();
 }, 5000);
 setSlide();
-
-
-

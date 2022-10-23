@@ -1,7 +1,13 @@
 .section1 {
   max-width: 2000px;
   width: 100%;
-  background-color: aqua;
+}
+
+.bgImagest{
+  background-repeat: no-repeat;
+  height: 500px;
+  max-width: 2000px;
+  width: 100%;
 }
 .image-slider {
   width: 100%;
@@ -21,12 +27,31 @@
   background-color: lightcoral;
   border-radius: 50%;
   cursor: pointer;
+  z-index: 99;
 }
 .arrow-left {
   left: 40px;
 }
 .arrow-right{
   right: 40px;
+}
+.slider-content{
+  position: relative;
+}
+.dots-parent{
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+}
+.child{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: yellow;
+  margin: 20px;
+  cursor: pointer;
 }
 .post-wrapper {
   margin: 50px 20px;
