@@ -5,6 +5,7 @@
 
 .bgImagest{
   background-repeat: no-repeat;
+  background-position: center;
   height: 500px;
   max-width: 2000px;
   width: 100%;

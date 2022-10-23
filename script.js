@@ -130,7 +130,7 @@ function createImgTag(item) {
   // return tagImage;
 
   const bgImage = document.createElement("div");
-  bgImage.style.backgroundImage = `url(${item.imageUrl})`
+  bgImage.style.backgroundImage = `url(${item.imageUrl})`;
   bgImage.classList.add("bgImagest");
   return bgImage;
 }
@@ -146,7 +146,16 @@ function createDots() {
   data.forEach((element) => {
     const childDots = document.createElement("div");
     childDots.classList.add("child");
+    childDots.setAttribute("data-id", element.id - 1);
+
     dots.appendChild(childDots);
+
+    childDots.addEventListener("click", function (event) {
+      let id = event.target.getAttribute("data-id");
+      sliderIndex = id;
+      setSlide()
+
+    });
   });
   return dots;
 }
