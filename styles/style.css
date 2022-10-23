@@ -54,6 +54,9 @@
   margin: 20px;
   cursor: pointer;
 }
+.child.activedot{
+  border: 2px solid red;
+}
 .post-wrapper {
   margin: 50px 20px;
 }

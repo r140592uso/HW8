@@ -115,6 +115,7 @@ let data = [
 const arrowleft = document.getElementById("arrowleft");
 const arrowright = document.getElementById("arrowright");
 const sliderContent = document.getElementById("slider-content");
+let dotsChildElement = document.getElementsByClassName("child");
 let sliderIndex = 0;
 
 function createDivTag(item) {
@@ -153,8 +154,7 @@ function createDots() {
     childDots.addEventListener("click", function (event) {
       let id = event.target.getAttribute("data-id");
       sliderIndex = id;
-      setSlide()
-
+      setSlide();
     });
   });
   return dots;
@@ -170,8 +170,11 @@ function setSlide() {
   slideItem.appendChild(titleSlider);
   sliderContent.appendChild(slideItem);
   sliderContent.appendChild(dots);
+  currentDotActive();
 }
-
+function currentDotActive() {
+  dotsChildElement[sliderIndex].classList.add("activedot");
+}
 function arrowLeftClick() {
   if (sliderIndex == 0) {
     sliderIndex = data.length - 1;
@@ -181,7 +184,6 @@ function arrowLeftClick() {
   sliderIndex -= 1;
   setSlide();
 }
-
 function arrowRightClick() {
   if (sliderIndex == data.length - 1) {
     sliderIndex = 0;
